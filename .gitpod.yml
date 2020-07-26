@@ -1,12 +1,14 @@
+image:
+  file: .gitpod.Dockerfile
+
 ports:
   - port: 3000
     onOpen: open-preview
 tasks:
   - init: >
-      bundle install --without production &&
-      rails db:migrate
+      bundle install --without production && rails db:migrate
     command: >
       rails server
 github:
-    prebuilds:
-        pullRequestsFromForks: true
+  prebuilds:
+    pullRequestsFromForks: true
